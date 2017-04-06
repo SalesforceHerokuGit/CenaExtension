@@ -1,8 +1,20 @@
 // VARIABLES----------------------------------------------------------------
-var assets = ["/media/jhon.webm", "/media/jhon2.webm"]
+var assets = ["/media/jhon.webm", "/media/jhon2.webm","/media/and.mp3","/media/cenagif2.webm","/media/cenagif3.webm","/media/cenagif.webm"]
 
 
+//Musica-----------------------------------------------------------------------------
+var videoEl0 = document.querySelector('.shia-do-it0 .shia-do-it--container0 video');
+if (videoEl0 == null) {
+	var videoCount = 0;
+	var div0 = document.createElement('div0');
+	document.body.appendChild(div0);
+	div0.className = 'shia-do-it0';
+	div0.style.cssText = ('position: fixed; bottom: -100px; z-index: 99999; right: 600px; height: 530px; width: 720px; pointer-events: none;');
+	div0.innerHTML = '<div class="shia-do-it--container0" style="width: 720px; overflow:hidden; display:block; height: 535px;"><video width="650" height="540" style="margin-top: -5px; max-width: none; padding: 0;" name="media"><source type="video/webm"></video></div>';
+}
+var video0 = document.querySelector('.shia-do-it0 .shia-do-it--container0 video');
 
+video0.src = chrome.extension.getURL(assets[2]);
 
 //cena abajo izquierda-----------------------------------------------------------------------------
 var videoEl = document.querySelector('.shia-do-it .shia-do-it--container video');
@@ -91,26 +103,80 @@ video7.style.opacity = "0";
 video7.style.cssText = ('transition: opacity 200ms;');
 video7.src = chrome.extension.getURL(assets[1]);
 //------------------------------------------------------------------------------------
+//-------PENDIENTE HACER PROCEDURAL----------------------------------------
+//
+var videoEl8 = document.querySelector('.shia-do-it8 .shia-do-it--container8 video');
+if (videoEl8 == null) {
+	var videoCount = 0;
+	var div8 = document.createElement('div8');
+	document.body.appendChild(div8);
+	div8.className = 'shia-do-it8';
+	div8.style.cssText = ('position: fixed; bottom: 50px; z-index: 99999; right: 300px; height: 530px; width: 720px; pointer-events: none;');
+	div8.innerHTML = '<div class="shia-do-it--container8" style="width: 720px; overflow:hidden; display:block; height: 535px;"><video width="650" height="540" style="margin-top: -5px; max-width: none; padding: 0;" name="media"><source type="video/webm"></video></div>';
+}
+var video8 = document.querySelector('.shia-do-it8 .shia-do-it--container8 video');
+video8.style.opacity = "0";
+video8.style.cssText = ('transition: opacity 200ms;');
+video8.src = chrome.extension.getURL(assets[3]);
+//------------------------------------------------------------------------------------
+
+var videoEl9 = document.querySelector('.shia-do-it9 .shia-do-it--container9 video');
+if (videoEl9 == null) {
+	var videoCount = 0;
+	var div9 = document.createElement('div9');
+	document.body.appendChild(div9);
+	div9.className = 'shia-do-it9';
+	div9.style.cssText = ('position: fixed; bottom: 50px; z-index: 99999; right: 300px; height: 530px; width: 720px; pointer-events: none;');
+	div9.innerHTML = '<div class="shia-do-it--container9" style="width: 720px; overflow:hidden; display:block; height: 535px;"><video width="650" height="540" style="margin-top: -5px; max-width: none; padding: 0;" name="media"><source type="video/webm"></video></div>';
+}
+var video9 = document.querySelector('.shia-do-it9 .shia-do-it--container9 video');
+video9.style.opacity = "0";
+video9.style.cssText = ('transition: opacity 200ms;');
+video9.src = chrome.extension.getURL(assets[4]);
+//------------------------------------------------------------------------------------
+
+var videoEl10 = document.querySelector('.shia-do-it10 .shia-do-it--container10 video');
+if (videoEl10 == null) {
+	var videoCount = 0;
+	var div10 = document.createElement('div10');
+	document.body.appendChild(div10);
+	div10.className = 'shia-do-it10';
+	div10.style.cssText = ('position: fixed; bottom: 50px; z-index: 99999; right: 300px; height: 530px; width: 720px; pointer-events: none;');
+	div10.innerHTML = '<div class="shia-do-it--container10" style="width: 720px; overflow:hidden; display:block; height: 535px;"><video width="650" height="540" style="margin-top: -5px; max-width: none; padding: 0;" name="media"><source type="video/webm"></video></div>';
+}
+var video10 = document.querySelector('.shia-do-it10 .shia-do-it--container10 video');
+video10.style.opacity = "0";
+video10.style.cssText = ('transition: opacity 200ms;');
+video10.src = chrome.extension.getURL(assets[5]);
+//-----------------------------------FIN PROCEDURALLLLLLLLLLLLLLLLL-------------------------------------------------
 
 
 
-reproductor(video, video2,video3,video4,video6,video7)
+	reproductor(video0,video, video2,video3,video4,video6,video7,video8,video9,video10)
 
 
 
 //FUNCTION TO REPRODUCE THE VIDEOS----------------------------------------------------------------------------------
 
-function reproductor(video, video2,video3,video4,video6,video7){
+function reproductor(video0,video, video2,video3,video4,video6,video7,video8,video9,video10){
 
 	video6.style.opacity = "0";
 	video7.style.opacity = "0";
+	video8.style.opacity = "0";
+	video9.style.opacity = "0";
+	video10.style.opacity = "0";
 
+	video0.load();
 	video.load();
 	video2.load();
 	video3.load();
 	video4.load();
+	
 
 	video.addEventListener('loadeddata', function() {
+		video0.currentTime = 0;
+		video0.play();
+
 		video.currentTime = 0;
 		video.style.opacity = "1";
 		video.play();
@@ -148,6 +214,7 @@ function reproductor(video, video2,video3,video4,video6,video7){
 			video3.style.opacity = "0";
 			video4.style.opacity = "0";
 
+			
 			video6.load();
 			video7.load();
 	
@@ -166,6 +233,35 @@ function reproductor(video, video2,video3,video4,video6,video7){
 		video6.currentTime = 0;
 		video6.style.opacity = "0";
 		video7.style.opacity = "0";
+
+		video8.load();	
+		video8.currentTime = 0;
+		video8.style.opacity = "1";
+		video8.play()
+
+			
+	};
+	video8.onended = function() {
+		video8.currentTime = 0;
+		video8.style.opacity = "0";
+
+		video9.load();	
+		video9.currentTime = 0;
+		video9.style.opacity = "1";
+		video9.play()	
+	};
+	video9.onended = function() {
+		video9.currentTime = 0;
+		video9.style.opacity = "0";
+
+		video10.load();	
+		video10.currentTime = 0;
+		video10.style.opacity = "1";
+		video10.play()		
+	};
+	video10.onended = function() {
+		video10.currentTime = 0;
+		video10.style.opacity = "0";
 	};
 
 	video.onerror = function() {
