@@ -1,0 +1,47 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "JOHN CENA",
+  "version": "2.1.4",
+  "manifest_version": 2,
+  "description": "Add Shia LaBeouf on web pages! Shia LaBeouf delivers the most intense motivational speech of all-time! With Ctrl+Shift+S hotkey!",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "storage"
+  ],
+  "commands": {
+      "toggle-shia": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+X",
+          "mac": "Command+Shift+S"
+        },
+        "description": "Show Shia LaBeouf on web page"
+       }
+  },
+  "background": {
+    "scripts": ["lib/jQuery-3.1.1.js","background.js"],
+    "persistent": true
+  },
+  "browser_action": {
+     "default_icon": {
+        "19": "icons/icon19.png",
+        "38": "icons/icon38.png"
+      },
+    "default_title": "JOHN CENA"
+  },
+  "web_accessible_resources": [
+    "media/*"
+  ],
+  "content_security_policy": "default-src 'self' 'unsafe-eval'; object-src 'self'; connect-src *; img-src *; media-src *; style-src *;"
+}
