@@ -245,10 +245,10 @@ function reproductor(video0,video, video2,video3,video4,video6,video7,video8,vid
 		video8.currentTime = 0;
 		video8.style.opacity = "0";
 
-		video9.load();	
-		video9.currentTime = 0;
-		video9.style.opacity = "1";
-		video9.play()	
+		video10.load();	
+		video10.currentTime = 0;
+		video10.style.opacity = "1";
+		video10.play()	
 	};
 	video9.onended = function() {
 		video9.currentTime = 0;
