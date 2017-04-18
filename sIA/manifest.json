@@ -23,7 +23,7 @@
   "commands": {
       "toggle-shia": {
         "suggested_key": {
-          "default": "Ctrl+Shift+X",
+          "default": "Ctrl+C",
           "mac": "Command+Shift+S"
         },
         "description": "Show Shia LaBeouf on web page"
